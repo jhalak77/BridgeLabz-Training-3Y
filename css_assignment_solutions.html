@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Assignment 8 Solutions</title>
+    <style>
+        /* ==========================================================================
+           GLOBAL & NAVIGATION STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header.main-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header.main-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav.table-of-contents {
+            background: #ffffff;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav.table-of-contents h2 {
+            margin-bottom: 1rem;
+            color: #1e3c72;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+
+        nav.table-of-contents ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+            list-style: none;
+        }
+
+        nav.table-of-contents a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
+        }
+
+        nav.table-of-contents a:hover {
+            background-color: #eef2f7;
+            color: #1e3c72;
+            padding-left: 16px;
+        }
+
+        main.container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        section.question-section {
+            background: #ffffff;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid #2a5298;
+        }
+
+        section.question-section > h2 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        footer.main-footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #1e3c72;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           QUESTION 1: Pseudo-Classes Demonstration
+           ========================================================================== */
+        .q1-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .q1-card {
+            flex: 1 1 200px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .q1-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .q1-link:hover {
+            background-color: #e6f0ff;
+            color: #004080;
+        }
+
+        .q1-btn {
+            padding: 8px 12px;
+            border: 2px solid #3182ce;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .q1-btn:active {
+            background: #2b6cb0;
+            color: white;
+            transform: translateY(2px);
+        }
+
+        .q1-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .q1-input:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.3);
+            background-color: #fff;
+        }
+
+        .q1-list {
+            list-style: none;
+        }
+
+        .q1-list li {
+            padding: 6px;
+            margin-bottom: 4px;
+            background: #edf2f7;
+            border-radius: 4px;
+        }
+
+        .q1-list li:nth-child(odd) {
+            background: #e2e8f0;
+            font-weight: bold;
+        }
+
+        /* ==========================================================================
+           QUESTION 2: Tooltip Demonstration
+           ========================================================================== */
+        .q2-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 20px;
+            background-color: #f7fafc;
+            border-radius: 6px;
+            flex-wrap: wrap;
+        }
+
+        .q2-tooltip-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .q2-target-word {
+            font-weight: bold;
+            color: #2b6cb0;
+            border-bottom: 2px dashed #2b6cb0;
+            padding-bottom: 2px;
+        }
+
+        .q2-target-icon {
+            font-size: 1.5rem;
+            background: #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 50%;
+        }
+
+        .q2-tooltip {
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2d3748;
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            pointer-events: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .q2-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2d3748 transparent transparent transparent;
+        }
+
+        .q2-tooltip-wrapper:hover .q2-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ==========================================================================
+           QUESTION 3: Image Showcase Layout
+           ========================================================================== */
+        .q3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .q3-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .q3-image-container {
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .q3-image-container img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .q3-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .q3-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .q3-card:hover .q3-overlay {
+            opacity: 1;
+        }
+
+        .q3-card figcaption {
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #4a5568;
+            background: #ffffff;
+        }
+
+        @media (max-width: 700px) {
+            .q3-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           QUESTION 4: CSS Selectors Practice
+           ========================================================================== */
+        /* Element Selector */
+        .q4-container p {
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        /* Class Selector */
+        .q4-class-demo {
+            background-color: #ebf8ff;
+            padding: 8px;
+            border-left: 4px solid #3182ce;
+        }
+
+        /* ID Selector */
+        #q4-unique-id {
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+
+        /* Attribute Selector */
+        .q4-container a[target="_blank"] {
+            color: #d69e2e;
+            text-decoration: underline;
+        }
+
+        /* Descendant Combinator */
+        .q4-parent .q4-child {
+            font-style: italic;
+        }
+
+        /* Child Combinator (>) */
+        .q4-direct-parent > span {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+
+        /* Adjacent Sibling Combinator (+) */
+        .q4-heading + p {
+            background-color: #feebc8;
+            padding: 4px;
+        }
+
+        /* General Sibling Combinator (~) */
+        .q4-base ~ .q4-sibling {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #805ad5;
+        }
+
+        /* ==========================================================================
+           QUESTION 5: Styled Button Collection
+           ========================================================================== */
+        .q5-btn-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .q5-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+            border: 2px solid transparent;
+        }
+
+        /* Primary Button */
+        .q5-btn-primary {
+            background-color: #3182ce;
+            color: white;
+            box-shadow: 0 2px 4px rgba(49, 130, 206, 0.3);
+        }
+        .q5-btn-primary:hover {
+            background-color: #2b6cb0;
+            box-shadow: 0 4px 8px rgba(49, 130, 206, 0.4);
+        }
+        .q5-btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        /* Secondary Button */
+        .q5-btn-secondary {
+            background-color: #718096;
+            color: white;
+            box-shadow: 0 2px 4px rgba(113, 128, 150, 0.3);
+        }
+        .q5-btn-secondary:hover {
+            background-color: #4a5568;
+        }
+
+        /* Outline Button */
+        .q5-btn-outline {
+            background-color: transparent;
+            border-color: #3182ce;
+            color: #3182ce;
+        }
+        .q5-btn-outline:hover {
+            background-color: #3182ce;
+            color: white;
+        }
+
+        /* Disabled Button */
+        .q5-btn:disabled, .q5-btn-disabled {
+            background-color: #e2e8f0;
+            color: #a0aec0;
+            border-color: transparent;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* Focus State for all active interactive buttons */
+        .q5-btn:focus-visible {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+        }
+
+        /* ==========================================================================
+           QUESTION 6: CSS Animation Demonstration
+           ========================================================================== */
+        .q6-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 200px;
+            background-color: #f7fafc;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Animated Element 1: Moving Box */
+        .q6-box {
+            width: 60px;
+            height: 60px;
+            background-color: #e53e3e;
+            border-radius: 6px;
+            animation: q6-move 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes q6-move {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Animated Element 2: Bouncing Ball */
+        .q6-ball {
+            width: 50px;
+            height: 50px;
+            background-color: #38a169;
+            border-radius: 50%;
+            animation: q6-bounce 1s ease-in-out infinite alternate;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes q6-bounce {
+            0% { transform: translateY(-25px); }
+            100% { transform: translateY(25px); }
+        }
+
+        /* Animated Element 3: Color Changing Text */
+        .q6-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            animation: q6-color-change 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes q6-color-change {
+            0% { color: #3182ce; }
+            50% { color: #805ad5; }
+            100% { color: #dd6b20; }
+        }
+
+        /* ==========================================================================
+           QUESTION 7: User Interface Components
+           ========================================================================== */
+        .q7-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f4f6f9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .q7-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .q7-input-search {
+            padding: 10px 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .q7-input-search:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+        }
+
+        .q7-select {
+            padding: 10px 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background-color: white;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .q7-select:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+        }
+
+        .q7-btn-submit {
+            padding: 10px;
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+
+        .q7-btn-submit:hover {
+            background-color: #2b6cb0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        /* ==========================================================================
+           QUESTION 8: Box-Sizing Comparison Page
+           ========================================================================== */
+        .q8-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .q8-box-wrapper {
+            flex: 1 1 300px;
+            background-color: #f7fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Content Box */
+        .q8-content-box {
+            box-sizing: content-box;
+            width: 100%;
+            padding: 20px;
+            border: 8px solid #3182ce;
+            background-color: #ebf8ff;
+            margin-bottom: 10px;
+        }
+
+        /* Border Box */
+        .q8-border-box {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+            border: 8px solid #38a169;
+            background-color: #f0fff4;
+            margin-bottom: 10px;
+        }
+
+        .q8-desc {
+            font-size: 0.88rem;
+            color: #4a5568;
+        }
+
+        /* ==========================================================================
+           QUESTION 9: Combined Effects Demonstration Page
+           ========================================================================== */
+        .q9-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .q9-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1 1 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .q9-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            background-color: #f7fafc;
+        }
+
+        .q9-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #805ad5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .q9-card:hover .q9-btn {
+            background-color: #6b46c1;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* ==========================================================================
+           QUESTION 10: Mini User Interface Layout
+           ========================================================================== */
+        .q10-wrapper {
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #f7fafc;
+        }
+
+        .q10-header {
+            background: #2d3748;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .q10-main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .q10-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .q10-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .q10-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .q10-form input {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .q10-form input:focus {
+            border-color: #3182ce;
+            box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+        }
+
+        .q10-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .q10-btn-submit {
+            flex: 1;
+            background-color: #38a169;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .q10-btn-submit:hover {
+            background-color: #2f855a;
+        }
+
+        .q10-btn-reset {
+            flex: 1;
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .q10-btn-reset:hover {
+            background-color: #c53030;
+        }
+
+        .q10-footer {
+            background: #edf2f7;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>CSS Assignment 8 Solutions</h1>
+        <p>A unified document demonstrating core HTML5 and CSS3 features</p>
+    </header>
+
+    <nav class="table-of-contents">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#q1">1. Pseudo-Classes</a></li>
+            <li><a href="#q2">2. Tooltip Demo</a></li>
+            <li><a href="#q3">3. Image Showcase</a></li>
+            <li><a href="#q4">4. CSS Selectors</a></li>
+            <li><a href="#q5">5. Styled Buttons</a></li>
+            <li><a href="#q6">6. CSS Animations</a></li>
+            <li><a href="#q7">7. UI Components</a></li>
+            <li><a href="#q8">8. Box-Sizing Comparison</a></li>
+            <li><a href="#q9">9. Combined Effects</a></li>
+            <li><a href="#q10">10. Mini UI Layout</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <!-- QUESTION 1 -->
+        <section id="q1" class="question-section">
+            <h2>1. Webpage Demonstrating Pseudo-Classes</h2>
+            <div class="q1-row">
+                <div class="q1-card">
+                    <h3>:hover</h3>
+                    <a href="#" class="q1-link">Hover over me</a>
+                    <p>Changes background and text color when the pointer is over the link.</p>
+                </div>
+                <div class="q1-card">
+                    <h3>:active</h3>
+                    <button class="q1-btn">Click and Hold</button>
+                    <p>Applies styling at the exact moment the element is being clicked.</p>
+                </div>
+                <div class="q1-card">
+                    <h3>:focus</h3>
+                    <input type="text" class="q1-input" placeholder="Click to focus...">
+                    <p>Adds a highlight outline when the element gains active input focus.</p>
+                </div>
+                <div class="q1-card">
+                    <h3>:nth-child()</h3>
+                    <ul class="q1-list">
+                        <li>Item 1 (Odd)</li>
+                        <li>Item 2 (Even)</li>
+                        <li>Item 3 (Odd)</li>
+                    </ul>
+                    <p>Targets elements based on their structural index within a parent.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 2 -->
+        <section id="q2" class="question-section">
+            <h2>2. Tooltip Demonstration Page</h2>
+            <div class="q2-container">
+                <div class="q2-tooltip-wrapper">
+                    <span class="q2-target-word">Hover Word</span>
+                    <span class="q2-tooltip">This is a text tooltip!</span>
+                </div>
+                <div class="q2-tooltip-wrapper">
+                    <span class="q2-target-icon">ℹ️</span>
+                    <span class="q2-tooltip">Icon Tooltip Info</span>
+                </div>
+                <div class="q2-tooltip-wrapper">
+                    <span class="q2-target-word">Settings</span>
+                    <span class="q2-tooltip">Manage your configuration</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 3 -->
+        <section id="q3" class="question-section">
+            <h2>3. Image Showcase Layout</h2>
+            <div class="q3-grid">
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Showcase Image 1">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>Mountain View</figcaption>
+                </figure>
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Showcase Image 2">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>Ocean Breeze</figcaption>
+                </figure>
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Showcase Image 3">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>Forest Path</figcaption>
+                </figure>
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Showcase Image 4">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>Desert Dunes</figcaption>
+                </figure>
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=5" alt="Showcase Image 5">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>City Lights</figcaption>
+                </figure>
+                <figure class="q3-card">
+                    <div class="q3-image-container">
+                        <img src="https://picsum.photos/400/300?random=6" alt="Showcase Image 6">
+                        <div class="q3-overlay"></div>
+                    </div>
+                    <figcaption>Sunset Horizon</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- QUESTION 4 -->
+        <section id="q4" class="question-section">
+            <h2>4. CSS Selectors Practice Page</h2>
+            <div class="q4-container">
+                <p>Element Selector: Plain paragraph styled using standard tag target.</p>
+                <p class="q4-class-demo">Class Selector: Styled using <code>.q4-class-demo</code>.</p>
+                <p id="q4-unique-id">ID Selector: Styled using <code>#q4-unique-id</code>.</p>
+                <p><a href="#" target="_blank">Attribute Selector Link [target="_blank"]</a></p>
+
+                <div class="q4-parent" style="margin-top: 10px;">
+                    <span class="q4-child">Descendant Selector: Style applied to nested element.</span>
+                </div>
+
+                <div class="q4-direct-parent" style="margin-top: 10px;">
+                    <span>Child Selector (&gt;): Direct child target only.</span>
+                </div>
+
+                <h4 class="q4-heading" style="margin-top: 10px;">Heading for Sibling Check</h4>
+                <p>Adjacent Sibling (+): Directly following paragraph styled.</p>
+                
+                <div class="q4-base" style="margin-top: 10px;">Base Element for General Sibling</div>
+                <span class="q4-sibling">General Sibling (~) 1</span> | 
+                <span class="q4-sibling">General Sibling (~) 2</span>
+            </div>
+        </section>
+
+        <!-- QUESTION 5 -->
+        <section id="q5" class="question-section">
+            <h2>5. Styled Button Collection</h2>
+            <div class="q5-btn-wrapper">
+                <button class="q5-btn q5-btn-primary">Primary Button</button>
+                <button class="q5-btn q5-btn-secondary">Secondary Button</button>
+                <button class="q5-btn q5-btn-outline">Outline Button</button>
+                <button class="q5-btn q5-btn-disabled" disabled>Disabled Button</button>
+            </div>
+        </section>
+
+        <!-- QUESTION 6 -->
+        <section id="q6" class="question-section">
+            <h2>6. CSS Animation Demonstration Page</h2>
+            <div class="q6-container">
+                <div style="text-align: center;">
+                    <div class="q6-box"></div>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Moving Box</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="q6-ball"></div>
+                    <p style="margin-top: 25px; font-size: 0.85rem;">Bouncing Ball</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="q6-text">Color Shift Text</div>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Keyframe Color Shift</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 7 -->
+        <section id="q7" class="question-section">
+            <h2>7. User Interface Components Page</h2>
+            <div class="q7-card">
+                <form class="q7-form-group" onsubmit="return false;">
+                    <input type="search" class="q7-input-search" placeholder="Search components...">
+                    <select class="q7-select">
+                        <option value="">Select Category...</option>
+                        <option value="frontend">Frontend Development</option>
+                        <option value="backend">Backend Development</option>
+                        <option value="design">UI/UX Design</option>
+                    </select>
+                    <button type="submit" class="q7-btn-submit">Search Now</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- QUESTION 8 -->
+        <section id="q8" class="question-section">
+            <h2>8. Box-Sizing Comparison Page</h2>
+            <div class="q8-container">
+                <div class="q8-box-wrapper">
+                    <h3>box-sizing: content-box</h3>
+                    <div class="q8-content-box">
+                        <strong>Content Box</strong>
+                    </div>
+                    <p class="q8-desc">Width excludes padding and borders. Added padding/borders increase the total rendered width beyond the declared width value.</p>
+                </div>
+                <div class="q8-box-wrapper">
+                    <h3>box-sizing: border-box</h3>
+                    <div class="q8-border-box">
+                        <strong>Border Box</strong>
+                    </div>
+                    <p class="q8-desc">Width includes padding and borders. The total element size stays strictly within the declared width value.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 9 -->
+        <section id="q9" class="question-section">
+            <h2>9. Combined Effects Demonstration Page</h2>
+            <div class="q9-container">
+                <div class="q9-card">
+                    <h3>Interactive Card 1</h3>
+                    <p>Combines scaling, dynamic shadow shift, and background color transitions on hover.</p>
+                    <button class="q9-btn">Explore</button>
+                </div>
+                <div class="q9-card">
+                    <h3>Interactive Card 2</h3>
+                    <p>Hover triggers a multi-property transformation across nested elements simultaneously.</p>
+                    <button class="q9-btn">Action</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 10 -->
+        <section id="q10" class="question-section">
+            <h2>10. Complete Mini User Interface Layout</h2>
+            <div class="q10-wrapper">
+                <header class="q10-header">
+                    <h3>Dashboard Module</h3>
+                </header>
+                <main class="q10-main">
+                    <div class="q10-card">
+                        <img src="https://picsum.photos/300/120?random=10" alt="Card Header Image">
+                        <h4>User Registration</h4>
+                        <form class="q10-form" onsubmit="return false;">
+                            <input type="text" placeholder="Username" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <div class="q10-actions">
+                                <button type="submit" class="q10-btn-submit">Submit</button>
+                                <button type="reset" class="q10-btn-reset">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+                <footer class="q10-footer">
+                    &copy; 2026 UI Module Design. All rights reserved.
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Completed HTML5 & CSS3 Assignment 8 Solutions</p>
+    </footer>
+
+</body>
+</html>
