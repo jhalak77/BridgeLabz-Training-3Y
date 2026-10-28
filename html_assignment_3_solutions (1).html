@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        QUESTION 5 & 20 DEMONSTRATION: Complete <head> Section with Meta Tags, Base, Favicon, etc.
+    -->
+    <!-- UTF-8 character encoding to support special symbols and multiple languages (Hindi, Japanese, French, etc.) -->
+    <meta charset="UTF-8">
+
+    <!-- Meta author description -->
+    <meta name="author" content="Student Name">
+
+    <!-- Meta description for search engine optimization (SEO) -->
+    <meta name="description" content="Comprehensive solutions for HTML Assignment 3 covering forms, iframes, meta tags, entities, and quotations.">
+
+    <!-- Viewport configuration for modern responsive rendering across desktop and mobile browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Document Title -->
+    <title>HTML Assignment 3 - All Solutions</title>
+
+    <!-- Base URL for all relative URLs in the document -->
+    <base href="https://example.com/" target="_blank">
+
+    <!-- Link to external resource (e.g., Favicon icon) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Embedded CSS declaration slot (empty as requested for head elements demonstration) -->
+    <style>
+        /* Empty style tag for assignment requirement */
+    </style>
+
+    <!-- Embedded JavaScript declaration slot (empty as requested for head elements demonstration) -->
+    <script>
+        // Empty script tag for assignment requirement
+    </script>
+</head>
+<body>
+
+    <!-- MAIN HEADER -->
+    <header>
+        <h1>HTML Assignment 3 - Complete Solutions</h1>
+        <p><em>All 20 solutions combined into a single, clean HTML document.</em></p>
+        <hr>
+    </header>
+
+    <!-- TABLE OF CONTENTS FOR EASY NAVIGATION -->
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#q1" target="_self">Question 1: YouTube Video Embed</a></li>
+            <li><a href="#q2" target="_self">Question 2: Google Map Embed</a></li>
+            <li><a href="#q3" target="_self">Question 3: Dual Iframe (Intro & Hobby)</a></li>
+            <li><a href="#q4" target="_self">Question 4: Frameset / Frame Simulation</a></li>
+            <li><a href="#q5" target="_self">Question 5: UTF-8 Multi-Language Text</a></li>
+            <li><a href="#q6" target="_self">Question 6: User Registration Form</a></li>
+            <li><a href="#q7" target="_self">Question 7: Login Form with CSRF Token</a></li>
+            <li><a href="#q8" target="_self">Question 8: Feedback Form</a></li>
+            <li><a href="#q9" target="_self">Question 9: File Upload Form</a></li>
+            <li><a href="#q10" target="_self">Question 10: Contact Form</a></li>
+            <li><a href="#q11" target="_self">Question 11: Student Information Form</a></li>
+            <li><a href="#q12" target="_self">Question 12: HTML Entities Practice</a></li>
+            <li><a href="#q13" target="_self">Question 13: Multi-Language Page</a></li>
+            <li><a href="#q14" target="_self">Question 14: External Website Iframe (Security Note)</a></li>
+            <li><a href="#q15" target="_self">Question 15: Payment Form</a></li>
+            <li><a href="#q16" target="_self">Question 16: URI Encoding Hyperlink</a></li>
+            <li><a href="#q17" target="_self">Question 17: Form Submission to Iframe Target</a></li>
+            <li><a href="#q18" target="_self">Question 18: Quotations and Entities</a></li>
+            <li><a href="#q19" target="_self">Question 19: Form Security Attributes</a></li>
+            <li><a href="#q20" target="_self">Question 20: Complete Head Elements Overview</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <main>
+
+        <!-- QUESTION 1 -->
+        <section id="q1">
+            <h2>1. YouTube Video Embed using Percentage Dimensions</h2>
+            <!--
+                Requirement: Width and height set using percentage values.
+            -->
+            <div style="width: 100%; height: 315px;">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video player" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <hr>
+        </section>
+
+        <!-- QUESTION 2 -->
+        <section id="q2">
+            <h2>2. Google Map Embed with Loading Attribute</h2>
+            <!-- 
+                EXPLANATION OF loading="lazy":
+                The loading="lazy" attribute instructs the browser to defer loading the iframe content 
+                until it reaches a calculated distance from the viewport. This optimizes initial page load 
+                speed, conserves memory, and saves internet bandwidth.
+            -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153169!3d-37.81627977975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1614000000000!5m2!1sen!2sin" 
+                title="Google Map City Location" 
+                width="600" 
+                height="450" 
+                loading="lazy" 
+                style="border:0;">
+            </iframe>
+            <hr>
+        </section>
+
+        <!-- QUESTION 3 -->
+        <section id="q3">
+            <h2>3. Dual Iframes: Introduction and Hobby Pages</h2>
+            <div>
+                <h3>Introduction Page Iframe</h3>
+                <iframe srcdoc="<h2>Hello! I am a student learning Web Development.</h2><p>Welcome to my introduction section inside an iframe.</p>" title="Introduction Page" width="80%" height="150"></iframe>
+            </div>
+            <br>
+            <div>
+                <h3>Favorite Hobby Page Iframe</h3>
+                <iframe srcdoc="<h2>My Hobby: Coding &amp; Reading</h2><p>I enjoy building web projects and exploring tech articles.</p>" title="Favorite Hobby Page" width="80%" height="150"></iframe>
+            </div>
+            <hr>
+        </section>
+
+        <!-- QUESTION 4 -->
+        <section id="q4">
+            <h2>4. Navigation & Content Layout (Frameset Simulation using Semantic Frames)</h2>
+            <!--
+                Note: Standard HTML5 deprecates <frameset>. Below is the HTML5-compliant implementation 
+                displaying top navigation links and a bottom message pane using embedded frame views.
+            -->
+            <div style="border: 1px solid #ccc;">
+                <!-- Top Navigation Pane -->
+                <iframe srcdoc="<nav><a href='#'>Home</a> | <a href='#'>About</a> | <a href='#'>Contact</a></nav>" title="Top Navigation Frame" width="100%" height="50"></iframe>
+                <!-- Bottom Content Pane -->
+                <iframe srcdoc="<h1>Welcome to My Website</h1>" title="Bottom Message Frame" width="100%" height="100"></iframe>
+            </div>
+            <hr>
+        </section>
+
+        <!-- QUESTION 5 -->
+        <section id="q5">
+            <h2>5. UTF-8 Character Encoding Verification</h2>
+            <p>
+                <strong>English:</strong> Welcome to our website!<br>
+                <strong>Hindi (हिंदी):</strong> हमारी वेबसाइट पर आपका स्वागत है!<br>
+                <strong>Japanese (日本語):</strong> 私たちのウェブサイトへようこそ！
+            </p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 6 -->
+        <section id="q6">
+            <h2>6. User Registration Form</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="reg-fullname">Full Name:</label><br>
+                    <input type="text" id="reg-fullname" name="fullname" required>
+                </p>
+                <p>
+                    <label for="reg-email">Email Address:</label><br>
+                    <input type="email" id="reg-email" name="email" required>
+                </p>
+                <p>
+                    <label for="reg-pass">Password:</label><br>
+                    <input type="password" id="reg-pass" name="password" required>
+                </p>
+                <p>
+                    <label for="reg-confirm">Confirm Password:</label><br>
+                    <input type="password" id="reg-confirm" name="confirm_password" required>
+                </p>
+                <p>
+                    <input type="submit" value="Register">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 7 -->
+        <section id="q7">
+            <h2>7. Login Form with CSRF Token</h2>
+            <!-- 
+                EXPLANATION OF CSRF TOKEN:
+                A CSRF (Cross-Site Request Forgery) token is a secret, unique, and unpredictable value 
+                generated by the server-side application. It is transmitted in the user's client request 
+                to protect against unauthorized state-changing requests executed by malicious websites.
+            -->
+            <form action="#" method="post">
+                <!-- Hidden input field containing dummy CSRF Token -->
+                <input type="hidden" name="csrf_token" value="d9f8a7b6c5e4d3c2b1a0">
+
+                <p>
+                    <label for="login-username">Username:</label><br>
+                    <input type="text" id="login-username" name="username" required>
+                </p>
+                <p>
+                    <label for="login-password">Password:</label><br>
+                    <input type="password" id="login-password" name="password" required>
+                </p>
+                <p>
+                    <input type="submit" value="Login">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 8 -->
+        <section id="q8">
+            <h2>8. Feedback Form</h2>
+            <form method="post" action="#">
+                <p>
+                    <label for="fb-text">Your Feedback:</label><br>
+                    <textarea id="fb-text" name="feedback" rows="4" cols="50" required></textarea>
+                </p>
+                <p>
+                    <label>Rating:</label><br>
+                    <input type="radio" id="good" name="rating" value="Good" required>
+                    <label for="good">Good</label><br>
+                    <input type="radio" id="average" name="rating" value="Average">
+                    <label for="average">Average</label><br>
+                    <input type="radio" id="poor" name="rating" value="Poor">
+                    <label for="poor">Poor</label>
+                </p>
+                <p>
+                    <input type="submit" value="Submit Feedback">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 9 -->
+        <section id="q9">
+            <h2>9. File Upload Form</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="user-file">Select File to Upload:</label><br>
+                    <input type="file" id="user-file" name="uploaded_file" accept=".jpg, .png">
+                </p>
+                <p><em>Note: Only image files with .jpg or .png extensions are allowed for upload.</em></p>
+                <p>
+                    <input type="submit" value="Upload File">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 10 -->
+        <section id="q10">
+            <h2>10. Contact Form</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="cnt-name">Full Name:</label><br>
+                    <input type="text" id="cnt-name" name="fullname" placeholder="John Doe" required>
+                </p>
+                <p>
+                    <label for="cnt-email">Email:</label><br>
+                    <input type="email" id="cnt-email" name="email" placeholder="john@example.com" required>
+                </p>
+                <p>
+                    <label for="cnt-subject">Subject:</label><br>
+                    <input type="text" id="cnt-subject" name="subject" placeholder="Inquiry about services" required>
+                </p>
+                <p>
+                    <label for="cnt-msg">Message:</label><br>
+                    <textarea id="cnt-msg" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Send Message">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 11 -->
+        <section id="q11">
+            <h2>11. Student Information Form</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="st-name">Student Name:</label><br>
+                    <input type="text" id="st-name" name="student_name" required>
+                </p>
+                <p>
+                    <label for="st-roll">Roll Number:</label><br>
+                    <input type="text" id="st-roll" name="roll_number" required>
+                </p>
+                <p>
+                    <label for="st-course">Course:</label><br>
+                    <select id="st-course" name="course" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="it">Information Technology</option>
+                        <option value="ee">Electrical Engineering</option>
+                        <option value="me">Mechanical Engineering</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" value="Submit Student Info">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 12 -->
+        <section id="q12">
+            <h2>12. Paragraph Demonstrating HTML Entities</h2>
+            <p>
+                Less than: &lt; <br>
+                Greater than: &gt; <br>
+                Ampersand: &amp; <br>
+                Double Quote: &quot; <br>
+                Single Quote: &apos; <br>
+                Copyright Symbol: &copy; <br>
+                Trademark Symbol: &trade; <br>
+                Euro Symbol: &euro;
+            </p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 13 -->
+        <section id="q13">
+            <h2>13. Multi-Language Content Verification</h2>
+            <p>
+                <strong>English:</strong> HTML is the standard markup language for creating Web pages.<br>
+                <strong>Hindi (हिंदी):</strong> HTML वेब पेज बनाने के लिए एक मानक भाषा है।<br>
+                <strong>French (Français):</strong> HTML est le langage de balisage standard pour la création de pages Web.
+            </p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 14 -->
+        <section id="q14">
+            <h2>14. Embedding External Website using Iframe</h2>
+            <iframe src="https://www.wikipedia.org" title="Wikipedia External Webpage" width="100%" height="300"></iframe>
+            <p>Some websites may not allow embedding for security reasons.</p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 15 -->
+        <section id="q15">
+            <h2>15. Payment Form</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="card-name">Cardholder Name:</label><br>
+                    <input type="text" id="card-name" name="card_name" required>
+                </p>
+                <p>
+                    <label for="card-number">Card Number:</label><br>
+                    <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" required>
+                </p>
+                <p>
+                    <label for="card-expiry">Expiry Date:</label><br>
+                    <input type="text" id="card-expiry" name="card_expiry" placeholder="MM/YY" required>
+                </p>
+                <p>
+                    <label for="card-cvv">CVV:</label><br>
+                    <input type="password" id="card-cvv" name="card_cvv" placeholder="123" maxlength="4" required>
+                </p>
+                <p>
+                    <input type="submit" value="Pay Now">
+                </p>
+            </form>
+            <hr>
+        </section>
+
+        <!-- QUESTION 16 -->
+        <section id="q16">
+            <h2>16. URI Encoding Demonstration</h2>
+            <p>
+                Original URL with spaces and special characters: <code>https://example.com/search?query=HTML &amp; CSS</code><br>
+                Correctly Encoded Link: 
+                <a href="https://example.com/search?query=HTML%20%26%20CSS" target="_blank">
+                    https://example.com/search?query=HTML%20%26%20CSS
+                </a>
+            </p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 17 -->
+        <section id="q17">
+            <h2>17. Form Submission Target to Iframe</h2>
+            <form action="about:blank" target="result-frame" method="get">
+                <p>
+                    <label for="frame-input">Enter Text:</label>
+                    <input type="text" id="frame-input" name="user_data" required>
+                    <input type="submit" value="Submit to Iframe">
+                </p>
+            </form>
+            <br>
+            <iframe name="result-frame" title="Submission Result Frame" srcdoc="<em>Form result will render here upon submission... (Simulating result.html: Form successfully submitted.)</em>" width="100%" height="80"></iframe>
+            <hr>
+        </section>
+
+        <!-- QUESTION 18 -->
+        <section id="q18">
+            <h2>18. Long and Short Quotations with HTML Entities</h2>
+            <p>
+                As Sir Tim Berners-Lee famously said, <q>The power of the Web is in its universality &amp; accessibility by everyone regardless of disability.</q>
+            </p>
+            <blockquote>
+                &quot;The Web does not just connect machines, it connects people. It is an information space that expands rapidly, empowering users across the globe.&quot;
+            </blockquote>
+            <hr>
+        </section>
+
+        <!-- QUESTION 19 -->
+        <section id="q19">
+            <h2>19. HTML Form Security Attributes</h2>
+            <form action="#" method="post" autocomplete="off">
+                <p>
+                    <label for="sec-user">Username:</label><br>
+                    <input type="text" id="sec-user" name="username" required>
+                </p>
+                <p>
+                    <label for="sec-pass">Password:</label><br>
+                    <input type="password" id="sec-pass" name="password" required>
+                </p>
+                <p>
+                    <input type="submit" value="Secure Submit">
+                </p>
+            </form>
+            <p>
+                <strong>Security Note:</strong> Turning off <code>autocomplete="off"</code> prevents browsers from caching or storing sensitive information (like passwords or payment details) locally, which reduces the risk of unauthorized data retrieval on shared or public computers.
+            </p>
+            <hr>
+        </section>
+
+        <!-- QUESTION 20 -->
+        <section id="q20">
+            <h2>20. Important Head Elements Overview</h2>
+            <p>The <code>&lt;head&gt;</code> section of this document demonstrates all key head elements required:</p>
+            <ul>
+                <li><code>&lt;title&gt;</code>: Sets the document title in browser tab.</li>
+                <li><code>&lt;meta&gt;</code>: Defines charset encoding, author information, and viewport configuration.</li>
+                <li><code>&lt;base&gt;</code>: Establishes base URL for relative links.</li>
+                <li><code>&lt;link&gt;</code>: Links favicon resource.</li>
+                <li><code>&lt;style&gt;</code>: Prepares CSS rule slot.</li>
+                <li><code>&lt;script&gt;</code>: Prepares client-side JavaScript slot.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- MAIN FOOTER -->
+    <footer>
+        <hr>
+        <p>HTML Assignment 3 - Solutions Completed</p>
+    </footer>
+
+</body>
+</html>
