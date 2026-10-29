@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 - Product Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="q3-product-catalog.css">
+</head>
+<body class="bg-light py-5">
+    <main class="container">
+        <header class="text-center mb-5">
+            <h1 class="fw-bold">Featured Products</h1>
+            <p class="text-muted">Explore our curated collection of high-tech gear.</p>
+        </header>
+
+        <!-- Product Grid: 4 cols on desktop (.col-md-3), 2 cols on tablet (.col-sm-6), 1 col on mobile (.col-12) -->
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 product-card shadow-sm border-0">
+                    <img src="https://picsum.photos/300/200?1" class="card-img-top" alt="Product">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Wireless Earbuds</h5>
+                        <p class="card-text text-muted small">High fidelity sound with active noise cancellation.</p>
+                        <div class="mt-auto">
+                            <span class="fw-bold text-primary fs-5 d-block mb-2">$79.99</span>
+                            <button class="btn btn-outline-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 product-card shadow-sm border-0">
+                    <img src="https://picsum.photos/300/200?2" class="card-img-top" alt="Product">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Smartwatch Pro</h5>
+                        <p class="card-text text-muted small">Track your fitness metrics and heart rate seamlessly.</p>
+                        <div class="mt-auto">
+                            <span class="fw-bold text-primary fs-5 d-block mb-2">$199.99</span>
+                            <button class="btn btn-outline-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 product-card shadow-sm border-0">
+                    <img src="https://picsum.photos/300/200?3" class="card-img-top" alt="Product">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ergonomic Keyboard</h5>
+                        <p class="card-text text-muted small">Mechanical keys designed for ultimate typing comfort.</p>
+                        <div class="mt-auto">
+                            <span class="fw-bold text-primary fs-5 d-block mb-2">$129.99</span>
+                            <button class="btn btn-outline-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 product-card shadow-sm border-0">
+                    <img src="https://picsum.photos/300/200?4" class="card-img-top" alt="Product">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">HD Action Camera</h5>
+                        <p class="card-text text-muted small">Capture your outdoor adventures in 4K resolution.</p>
+                        <div class="mt-auto">
+                            <span class="fw-bold text-primary fs-5 d-block mb-2">$249.99</span>
+                            <button class="btn btn-outline-primary w-100">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

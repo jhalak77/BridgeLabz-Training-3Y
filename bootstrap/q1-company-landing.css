@@ -1,0 +1,9 @@
+/* Custom enhancements built on top of Bootstrap core */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.navbar-brand {
+    letter-spacing: 1px;
+}

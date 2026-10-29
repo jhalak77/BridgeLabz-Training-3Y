@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+.carousel-item img {
+    height: 450px;
+    object-fit: cover;
+}
